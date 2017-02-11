@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Projects page</title>
+	
+	<meta name="author" content="your name" />
+	<meta name="description" content="" />
+
+<script src="//d3js.org/d3.v4.min.js" charset="utf-8"></script>
+	<link rel="stylesheet" href="CSS.css" type="text/css" />
+	
+</head>
+<body>
+<script type="text/javascript" src="testing.js"></script>
+	<div id="page">
+		<div id="logo">
+			
+		</div>
+		<div id="nav">
+			<ul>
+				<li><a href="Index.html>">Home</a></li>
+				<li><a href="About.html>">About</a></li>
+				<li><a href="Projects.html>">Projects</a></li>
+				<li><a href="Contact.html>">Contact</a></li>
+			</ul>	
+		</div>
+		<div id="content">
+			<h2>Projects</h2>
+			<p>
+			    
+			</p>
+			
+			<br>
+			<br>
+			
+			
+			
+			<p>
+		
+
+
+			</p>
+			<br>
+			
+			
+			
+			</br>
+			
+		</div>
+		<div id="footer">
+			<p>
+				
+			</p>
+		</div>
+	</div>
+</body>
+</html>
