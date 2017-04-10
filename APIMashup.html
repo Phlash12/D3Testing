@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head> <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+
+<title>Google and Flickr API mashup</title> 
+
+<style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map_canvas { height: 100% }
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    
+    <style type="text/css">
+        html { height: 100% }
+        body { height: 100%; margin: 0px; padding: 0px 
+		background: url("https://driftintospace.files.wordpress.com/2009/06/bgexamples.jpg?w=604&h=628")}
+        #map_canvas { height: 100% }
+		
+    </style>
+    
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+    <script type="text/javascript">    
+        
+        var Anime = {}
+		var map;
+        var flickr = [];       
+        var bounds;		
+		var infowindow = new google.maps.InfoWindow();
+        
+       
+        function trace(message) 
+        { 
+            if (typeof console != 'undefined') 
+            {
+                console.log(message);
+            }
+        }
+        
+		
+		Anime.toggleArrayLayer = function(arraylayer) 
+		{
+			if (arraylayer) {
+				for (i in arraylayer) {                 
+					if (arraylayer[i].getVisible() == true)
+					{
+						arraylayer[i].setMap(null);
+						arraylayer[i].visible = false;
+					}
+					else
+					{
+						arraylayer[i].setMap(map);
+						arraylayer[i].visible = true;
+					}
+				}
+			}
+		}
+		
+		
+		Anime.createFlickrMarker = function(i,latitude,longitude,infowindowcontent,icon)
+		{
+			var markerLatLng = new google.maps.LatLng(latitude,longitude);  
+			
+			
+			bounds.extend(markerLatLng);
+			map.fitBounds(bounds);
+			
+			
+			var image = new google.maps.MarkerImage(icon, null, null, null, new google.maps.Size(32,32));
+			
+			
+			flickr[i] = new google.maps.Marker({
+				position: markerLatLng,
+				map: map,
+				title: infowindowcontent,
+				icon: image
+			});
+			
+			
+			google.maps.event.addListener(flickr[i], 'click', function() {
+				infowindow.setContent(infowindowcontent);
+				infowindow.open(map,flickr[i]);
+			});
+		}
+				
+		
+		Anime.getFlickr = function(search)
+		{
+			bounds = new google.maps.LatLngBounds ();
+			$.getJSON('https://api.flickr.com/services/rest/?method=flickr.photos.search&format=json&api_key=204867c46e2f989795a33c98dab411e0&text='+search+'&lat='+map.getCenter().lat()+'&lon='+map.getCenter().lng()+'&extras=geo,url_t,url_m,url_sq&radius=20&radius_units=mi&per_page=20&jsoncallback=?',
+				function(data)
+				{trace(data);
+					$.each(data.photos.photo, function(i,item){
+						infowindowcontent = '<strong>'+item.title+'</strong><br>';
+						infowindowcontent += '<a href="'+item.url_m+'" target="_blank">';
+						infowindowcontent += '<img src="'+item.url_t+'"></a>';
+						Anime.createFlickrMarker(i,item.latitude,item.longitude,infowindowcontent,item.url_sq);	
+					});    
+				}
+			);
+		} 
+						
+        
+        Anime.initialize = function()
+        {
+            var latlng = new google.maps.LatLng(40.7128, -74.0059);
+            var myOptions = {
+                zoom: 12,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+            
+            
+            
+			Anime.getFlickr('Anime');
+			
+			
+        }
+		
+    </script>
+</head>
+
+<body onload="Anime.initialize()">
+    
+    <div style="position:absolute; width:380px; height: 100%; overflow:auto; float:left; padding-left:10px; padding-right:10px ;">
+        <h1>New York Anime Fans!</h1><br>
+		<p>See what local NYC anime fans are posting!</p><br>
+		<p>Below you can toggle the Flickr Images or hit Explore to reinitialize the google map and Flickr search results.</p>
+        <input type="checkbox" id="toggleFlickr" onClick="Anime.toggleArrayLayer(flickr)" checked> Toggle Flickr Images<br>
+		<button onclick="Anime.initialize()">Explore</button><br>
+		
+    </div>
+    
+
+    <div id="map_canvas" style="height:100%; margin-left:400px;"></div>
+</body>
+</html>
