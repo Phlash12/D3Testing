@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<title>Game Reviews</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+body, html {
+    height: 100%;
+	background: url("https://pbs.twimg.com/media/C-vKjAyXUAE4iSe.jpg") no-repeat center fixed; 
+    background-size: cover;
+
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #7f7fff
+;
+}
+w3-card-4 ,w3-margin ,w3-white {
+padding: 20px;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color:#7f7fff;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+.myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.myImg:hover {opacity: 0.7;}
+
+
+
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9); 
+}
+
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1200px;
+}
+
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+</style>
+<body class="w3-light-grey">
+
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+  
+<ul>
+  <li><a href="ContentSite.html">Home</a></li>
+  <li style="float:right"><a class="active" href="#about">About</a></li>
+</ul>
+
+
+<div class="w3-content" style="max-width:1400px">
+
+
+<header class="w3-container w3-center w3-padding-32"> 
+  <hr><h1><b>Review: Destiny(Rise of Iron)</b></h1>
+  <p>Reviewed by a player with <span class="w3-tag">No Life</span></p>
+  <hr>
+</header>
+
+
+<div class="w3-row">
+
+<div class="w3-col l8 s12 ">
+<div class="w3-card-4 w3-margin w3-white">
+  <div class="w3-content" style="max-width:700px">
+  <hr>
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Among the stars</span></h5>
+	<hr>
+	<center><iframe width="560" height="315"  src="https://www.youtube.com/embed/EFTn6jQk338" frameborder="0" style="box-shadow: 5px 5px 2.5px #888888;" allowfullscreen></iframe></center><br>
+   <p>Destiny is a game that initially failed to impress but has since grown and iterated on the best parts of its gameplay; A process that has culminated with it's final expansion Rise of Iron.  </p><br>
+	<hr><h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Astronomical Arsenal</span></h5><br><hr>
+	<p>As is tradition at this point, Rise of Iron brings with it a slew of new guns, new armor and even a new sword to fight back minions of the darkness. Improved performance thanks to the latest patch weapons patch means nearly all of the weapon types will offer comparable performance in the Crucible( Destiny's PvP arean) as well as high end PvE activities; speaking of which Rise of Iron brings with it a new one.
+	</p><br>
+	<center>
+	<video controls autoplay loop width="560" height="315" controls="controls" style="width:100%">
+	<source src="http://i.imgur.com/LIujto6.mp4" type="video/mp4">
+    </video><br><hr>
+	<h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Into the depths below.</span></h5>
+    </center><br>
+	<p>The Campaign of Rise of Iron will give players a good look into what the powerful nano-virus "SIVA" can do, but the real potential of this threat is best realized in the new Raid , Wrath of the Machine. Six players will experience three boss encounters requiring the best of their cooperative skills to defeat on both normal and heroic modes.</p>
+	<br>
+	<hr><center><img class="myImg" src="https://images.igdb.com/igdb/image/upload/t_screenshot_big/tlkdxnpqhgv4hs3hwf4h.jpg" style="box-shadow: 5px 5px 2.5px #888888;" width="560" height="315" ></img></center><br>
+	<div id="myModal" class="modal">
+
+
+  <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+	<p></p><br>
+  <hr><h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Last Hoorah</span></h5><hr>
+	<br>
+	<p> This being the final expansion of Destiny 1 , Bungie has opted to make the game the most rewarding it has ever been. Loot drops regularly and is better quality the harder the content is that you conquer. The newest iteration(Destiny 2) arrives in fall of 2017 and we can expect to see more guns, more armor and more enemies to face then. But to those looking for a psuedo-mmo on consoles to shoot aliens and collect loot, Rise of Iron is worthy of your time.</p>
+	
+	<center><img class="myImg" src="https://images.igdb.com/igdb/image/upload/t_screenshot_big/mf4j2rywpkgwzuzijcqz.jpg" style="box-shadow: 5px 5px 2.5px #888888;" width="560" height="315" ></img></center><br>
+
+	<p></p>
+    <br>
+	  <hr><h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">I'll see you star-side: 8/10</span></h5><hr>
+	  <br>
+	  
+	<center><img class="myImg" src="https://images.igdb.com/igdb/image/upload/t_screenshot_big/csgy0fzzraeisdhzmnjp.jpg" style="box-shadow: 5px 5px 2.5px #888888;" width="560" height="315" ></img></center><br>
+	  <p>Destiny by this point has you totally hooked or totally turned off due to it's state at launch. Still it's latest expansion provides great content for the currently enthralled and great catch-up mechanism's and starting points for returning players who are looking to give it another shot before the new game arrives.</p>
+	  <br>
+      
+
+ 
+  
+</div>
+</div>
+</div>
+
+<div class="w3-col l4">
+ 
+  <div class="w3-card-2 w3-margin w3-margin-top">
+  <img  class="myImg" src="https://static.pexels.com/photos/77368/controller-gaming-playstation-ps3-77368.jpeg" style="width:100%">
+    <div class="w3-container w3-white">
+      <h4><b>About <span class="w3-tag w3-black w3-margin-bottom">No Life</span> Game Reviews</b></h4>
+      <p>No Life Game Reviews is a site dedicated to reviewing games from the perspective of the more hardcore audience. The type of player who will invest a lot of time into something and how the game accomodates that play style.</p>
+    </div>
+  </div><hr>
+  
+  
+
+
+  <div class="w3-card-2 w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Upcoming Reviews</h4>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+      <li class="w3-padding-16">
+        <img  id="myImg" src="http://cdn.segmentnext.com/wp-content/uploads/2016/03/world-of-warcraft-legion-release-date.jpg" alt="Image" class="w3-left w3-margin-right" style="width:100px">
+        <span class="w3-large">WoW: Legion</span><br>
+        <span>The 6th expansion to the most popular MMO arrives and with it a new class, new zones, new raids, and new legendary items.</span>
+      </li>
+      <li class="w3-padding-16">
+        <img id="myImg" src="https://d1wfiv6sf8d64f.cloudfront.net/static/pc/img/visual_main.jpg" alt="Image" class="w3-left w3-margin-right" style="width:100px">
+        <span class="w3-large">Player Unknown's: Battlegrounds</span><br>
+        <span>A new entry into the Battle Royale genre. PUBG is a new take on a tried and true genre of kill or be killed.</span>
+      </li> 
+      <li class="w3-padding-16">
+        <img id="myImg" src="https://i.ytimg.com/vi/u4-FCsiF5x4/maxresdefault.jpg" alt="Image" class="w3-left w3-margin-right" style="width:100px"  >
+        <span class="w3-large">Horizon: Zero Dawn</span><br>
+        <span>Humanity is on the backfoot as machines roam the earth. It will take all of you cunning and skill to traverse this world and see your people thrive.</span>
+      </li>   
+      <li class="w3-padding-16 w3-hide-medium w3-hide-small">
+        <img id="myImg" src="http://www.finalfantasyxiv.com/fankit_stormblood/g6Bt4GMv/ffxiv_pcw30001_2560x1440.jpg" alt="Image" class="w3-left w3-margin-right" style="width:100px">
+        <span class="w3-large">FFXIV: Stormblood</span><br>
+        <span>A new job class and a lot more for the 2nd expansion to the revived FFXIV MMO from Square Enix.</span>
+      </li>  
+    </ul>
+  </div>
+  <hr> 
+ 
+ 
+  <div class="w3-card-2 w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Tags</h4>
+    </div>
+    <div class="w3-container w3-white">
+    <p><span class="w3-tag w3-black w3-margin-bottom">FPS</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">video</span> <span class="w3-tag w3-black w3-small w3-margin-bottom">shooter</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">RPG</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">MMO</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Raid</span>
+      <span class="w3-tag w3-black w3-small w3-margin-bottom">demons</span> <span class="w3-tag w3-black w3-small w3-margin-bottom">boss battles</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Co-op</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">loot</span> <span class="w3-tag w3-black w3-small w3-margin-bottom">PvP</span> <span class="w3-tag w3-black w3-small w3-margin-bottom">Sci-fi</span>
+      <span class="w3-tag w3-black w3-small w3-margin-bottom">PvE</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Games</span>
+    </p>
+    </div>
+  </div>
+  
+
+</div>
+
+
+</div><br>
+
+
+</div>
+
+<script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+
+
+var modal = document.getElementById('myModal');
+
+
+var img = $('.myImg');
+var modalImg = $("#img01");
+var captionText = document.getElementById("caption");
+$('.myImg').click(function(){
+    modal.style.display = "block";
+    var newSrc = this.src;
+    modalImg.attr('src', newSrc);
+    captionText.innerHTML = this.alt;
+});
+
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+</script>
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+ 
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,551 @@
+
+<!DOCTYPE html>
+<html>
+<title>Game Reviews</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+ body, html {
+    height: 100%;
+	background: url("https://pbs.twimg.com/media/C-vF6IsXkAAFRmD.jpg") no-repeat center fixed; 
+    background-size: cover;
+
+}
+
+.w3-light-grey { 
+ 
+    background-image: url("");
+
+    /* Full height */
+    height: 100%; 
+
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #7f7fff;
+}
+{box-sizing:border-box}
+
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+ 
+  background-size: cover;
+ vertical-align:text-bottom;
+}
+
+.mySlides {
+    display: none;
+}
+
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 1s ease;
+  border-radius: 0 1px 1px 0;
+}
+
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover, .next:hover {
+  background-color: #7f7fff;
+}
+
+
+.text {
+  color: #7f7fff;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+
+.numbertext {
+  color: #7f7fff;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+.dot {
+  cursor:pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color:#7f7fff;
+}
+
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color:#7f7fff; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+}
+
+#myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}
+.w3-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.w3-button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.w3-button {
+  border-radius: 4px;
+  background-color: #7f7fff;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  
+  .w3-button:hover span {
+  padding-right: 25px;
+}
+
+.w3-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+
+<body class="w3-light-grey">
+
+<ul>
+  <li><a href="ContentSite.html">Home</a></li>
+ 
+  <li style="float:right" color="blue"><a class="active" href="#about">About</a></li>
+</ul>
+
+
+
+
+
+<div class="w3-content" style="max-width:2000px">
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>No Life Game Reviews</b></h1>
+  <p>Welcome to the Game Reviews from a player with <span class="w3-tag">No Life</span></p>
+</header>
+<div controls autoplay loop class="slideshow-container">
+  <div class="mySlides w3-animate-right">
+    <div class="numbertext"></div>
+    <img src="https://pbs.twimg.com/media/C-uyD2FXUAAuhN2.jpg" style="width:100%">
+    <div class="text"></div>
+	 <div class="w3-display-bottomleft w3-container w3-padding-16 w3-black">
+    Doom(2016)
+	</div>
+  </div>
+
+  <div class="mySlides w3-animate-right">
+    <div class="numbertext"></div>
+    <img src="https://pbs.twimg.com/media/C-uy1k9XcAA-Pnc.jpg" style="width:100%">
+    <div class="text"></div>
+	 <div class="w3-display-bottomleft w3-container w3-padding-16 w3-black">
+    Nioh
+	</div>
+  </div>
+
+  <div class="mySlides w3-animate-right">
+    <div class="numbertext"></div>
+    <img src="https://pbs.twimg.com/media/C-uzFeAXgAAshm5.jpg" style="width:100%">
+    <div class="text"></div>
+	 <div class="w3-display-bottomleft w3-container w3-padding-16 w3-black">
+    Destiny: Rise of Iron
+	</div>
+  </div>
+  
+  <div class="mySlides w3-animate-right">
+    <div class="numbertext"></div>
+    <img src="https://pbs.twimg.com/media/C-ux8tbXUAEQ5Iu.jpg" style="width:100%">
+    <div class="text"></div>
+	 <div class="w3-display-bottomleft w3-container w3-padding-16 w3-black">
+    Doom(2016)
+	</div>
+  </div>
+  <div class="mySlides w3-animate-right">
+    <div class="numbertext"></div>
+    <img src="https://pbs.twimg.com/media/C-uxvvmW0AA56ge.jpg" style="width:100%">
+    <div class="text"></div>
+	<div class="w3-display-bottomleft w3-container w3-padding-16 w3-black">
+    Destiny: Rise of Iron
+	</div>
+  </div>
+  <div class="mySlides w3-animate-right">
+    <div class="numbertext"></div>
+    <img src="https://pbs.twimg.com/media/C-uye5cVYAAmSem.jpg" style="width:100%">
+    <div class="text"></div>
+	 <div class="w3-display-bottomleft w3-container w3-padding-16 w3-black">
+    Nioh
+	</div>
+  </div>
+  <div class="mySlides w3-animate-right">
+    <div class="numbertext"></div>
+    <img src="https://pbs.twimg.com/media/C-uyP18XsAEaJFx.jpg" style="width:100%">
+    <div class="text"></div>
+	 <div class="w3-display-bottomleft w3-container w3-padding-16 w3-black">
+    Doom(2016)
+	</div>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+  <span class="dot" onclick="currentSlide(6)"></span>
+  <span class="dot" onclick="currentSlide(7)"></span>
+</div>
+
+<div> 
+<br>
+<div class="w3-content" style="max-width:1400px">
+
+
+
+<div class="w3-row">
+
+
+<div class="w3-col l8 s12">
+ 
+  <div class="w3-card-4 w3-margin w3-white">
+    <img src="http://www.myplaystationwallpapers.net/1920x1080/doom-game-informer.jpg" alt="Nature" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Review: DOOM(2016)</b></h3>
+      <h5>Review of Doom  <span class="w3-opacity">February 7, 2016</span></h5>
+    </div>
+
+    <div class="w3-container">
+      <p>DOOM is the return of the Doom guy back from his long hiatus and the ...interesting previous installment that was Doom 3. Id Software brings killing demons back to its roots. A fast-paced shooter with a natural blend of classic DOOM twitch reactions and modern visuals and progression systems Doom offers new players a portal to another era of FPS.</p>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><a href="Doom.html"><b class="w3-button"><span>READ MORE &raquo;</span></b></a></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>Comments &nbsp;</b> <span class="w3-tag">10</span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+ 
+  <div class="w3-card-4 w3-margin w3-white">
+  <img src="https://media.playstation.com/is/image/SCEA/nioh-listing-thumb-01-ps4-us-08dec15?$Icon$" alt="Norway" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Nioh </b></h3>
+      <h5>Review: Nioh  <span class="w3-opacity">December 2, 2016</span></h5>
+    </div>
+
+    <div class="w3-container">
+      <p>An Action game in the style of Dark Souls with the loot system of diablo and the fast pace of Ninja Gaiden. Team Ninja's return to form development has finally come. Tread lightly, this journey is not for the faint of heart; you will die.</p>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><a href="NiohRev.html"><b class="w3-button"><span>READ MORE &raquo;</span></b></a></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>Comments &nbsp;</b> <span class="w3-tag">23</span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  
+   <div class="w3-card-4 w3-margin w3-white">
+  <img src="http://www.readersgambit.com/wp-content/uploads/2016/09/destiny_rise_of_iron_5.jpg" alt="Norway" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Destiny </b></h3>
+      <h5>Review: Destiny(Rise of Iron)  <span class="w3-opacity">October 24th, 2016</span></h5>
+    </div>
+
+    <div class="w3-container">
+      <p>Destiny: Rise of Iron is Bungie's latest expansion into the world of space wizards and Master chief caliber soldiers. New loot, new guns, new bad guys, same Destiny. Players can expect long hours spend shooting aliens, killing gods, and in some arenas, each others. All for the chase of that next piece of loot.</p>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><a href="Destiny.html"><b class="w3-button"><span>READ MORE &raquo;</span></b></a></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>Comments &nbsp;</b> <span class="w3-tag">19</span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<div class="w3-col l4">
+
+  <div class="w3-card-2 w3-margin w3-margin-top">
+  <img src="https://static.pexels.com/photos/77368/controller-gaming-playstation-ps3-77368.jpeg" style="width:100%">
+    <div class="w3-container w3-white">
+      <h4><b>About <span class="w3-tag w3-black w3-margin-bottom">No Life</span> Game Reviews</b></h4>
+      <p>No Life Game Reviews is a site dedicated to reviewing games from the perspective of the more hardcore audience. The type of player who will invest a lot of time into something and how the game accomodates that play style.</p>
+    </div>
+  </div><hr>
+  
+  
+    <div class="w3-card-2 w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Upcoming Reviews</h4>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+      <li class="w3-padding-16">
+        <img  src="http://cdn.segmentnext.com/wp-content/uploads/2016/03/world-of-warcraft-legion-release-date.jpg" alt="Image" class="w3-left w3-margin-right" style="width:100px">
+        <span class="w3-large">WoW: Legion</span><br>
+        <span>The 6th expansion to the most popular MMO arrives and with it a new class, new zones, new raids, and new legendary items.</span>
+      </li>
+      <li class="w3-padding-16">
+        <img src="https://d1wfiv6sf8d64f.cloudfront.net/static/pc/img/visual_main.jpg" alt="Image" class="w3-left w3-margin-right" style="width:100px">
+        <span class="w3-large">Player Unknown's: Battlegrounds</span><br>
+        <span>A new entry into the Battle Royale genre. PUBG is a new take on a tried and true genre of kill or be killed.</span>
+      </li> 
+      <li class="w3-padding-16">
+        <img src="https://i.ytimg.com/vi/u4-FCsiF5x4/maxresdefault.jpg" alt="Image" class="w3-left w3-margin-right" style="width:100px"  >
+        <span class="w3-large">Horizon: Zero Dawn</span><br>
+        <span>Humanity is on the backfoot as machines roam the earth. It will take all of you cunning and skill to traverse this world and see your people thrive.</span>
+      </li>   
+      <li class="w3-padding-16 w3-hide-medium w3-hide-small">
+        <img src="http://www.finalfantasyxiv.com/fankit_stormblood/g6Bt4GMv/ffxiv_pcw30001_2560x1440.jpg" alt="Image" class="w3-left w3-margin-right" style="width:100px">
+        <span class="w3-large">FFXIV: Stormblood</span><br>
+        <span>A new job class and a lot more for the 2nd expansion to the revived FFXIV MMO from Square Enix.</span>
+      </li>  
+    </ul>
+  </div>
+  <hr> 
+ 
+
+  <div class="w3-card-2 w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Tags</h4>
+    </div>
+    <div class="w3-container w3-white">
+    <p><span class="w3-tag w3-light-grey w3-small w3-margin-bottom">FPS</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">video</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">shooter</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">RPG</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">MMO</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Raid</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">demon</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">boss</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Co-op</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">loot</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">PvP</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Sci-fi</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">PvE</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Games</span>
+    </p>
+    </div>
+  </div>
+  
+
+</div>
+
+
+</div><br>
+
+
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1} 
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+
+function topFunction() {
+    document.body.scrollTop = 0; 
+    document.documentElement.scrollTop = 0; 
+}
+
+ var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 4000); // Change image every 2 seconds
+}
+</script>
+<footer class="w3-container w3-light-grey w3-padding-32 w3-margin-top">
+ 
+
+</footer>
+
+</body>
+</html>
